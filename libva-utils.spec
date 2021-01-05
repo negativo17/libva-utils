@@ -55,6 +55,7 @@ autoreconf -vif
 %{_bindir}/putsurface
 %{_bindir}/putsurface_wayland
 %{_bindir}/sfcsample
+%{_bindir}/vacopy
 %{_bindir}/vainfo
 %{_bindir}/vavpp
 %{_bindir}/vp8enc
