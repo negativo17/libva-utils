@@ -6,7 +6,7 @@ Summary:	Collection of tests for VA-API (VIdeo Acceleration API)
 License:	MIT and BSD
 URL:		https://01.org/linuxmedia/vaapi
 
-Source0:	https://github.com/intel/%{name}/releases/download/%{version}/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/intel/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
