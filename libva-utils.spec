@@ -1,6 +1,6 @@
 Name:		libva-utils
 Epoch:      1
-Version:	2.12.0
+Version:	2.13.0
 Release:	1%{?dist}
 Summary:	Collection of tests for VA-API (VIdeo Acceleration API)
 License:	MIT and BSD
@@ -69,6 +69,9 @@ autoreconf -vif
 %{_bindir}/vppsharpness
 
 %changelog
+* Mon Oct 25 2021 Simone Caronni <negativo17@gmail.com> - 1:2.13.0-1
+- Update to 2.13.0.
+
 * Wed Jun 23 2021 Simone Caronni <negativo17@gmail.com> - 1:2.12.0-1
 - Update to 2.12.0.
 
