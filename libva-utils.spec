@@ -1,6 +1,6 @@
 Name:		libva-utils
 Epoch:      1
-Version:	2.13.0
+Version:	2.14.0
 Release:	1%{?dist}
 Summary:	Collection of tests for VA-API (VIdeo Acceleration API)
 License:	MIT and BSD
@@ -8,16 +8,14 @@ URL:		https://01.org/linuxmedia/vaapi
 
 Source0:	https://github.com/intel/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires:  autoconf
-BuildRequires:  automake
+BuildRequires:  gcc
+BuildRequires:  meson >= 0.42.0
 BuildRequires:  gcc-c++
-BuildRequires:  libtool
 BuildRequires:  pkgconfig(libva) >= 1.1.0
 BuildRequires:  pkgconfig(libva-drm)
 BuildRequires:  pkgconfig(libva-wayland)
 BuildRequires:  pkgconfig(libva-x11)
 BuildRequires:  pkgconfig(wayland-client) >= 1.0.0
-BuildRequires:  pkgconfig(wayland-scanner) >= 1.0.0
 BuildRequires:  pkgconfig(x11)
 
 %description
@@ -27,19 +25,17 @@ properly operate.
 
 %prep
 %autosetup -p1
-autoreconf -vif
 
 %build
-%configure \
-    --disable-static \
-    --enable-drm \
-    --enable-wayland \
-    --enable-x11
+%meson \
+  -D drm=true \
+  -D wayland=true \
+  -D x11=true
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files
 %license COPYING
@@ -55,12 +51,10 @@ autoreconf -vif
 %{_bindir}/putsurface
 %{_bindir}/putsurface_wayland
 %{_bindir}/sfcsample
-%{_bindir}/vacopy
 %{_bindir}/vainfo
 %{_bindir}/vavpp
 %{_bindir}/vp8enc
 %{_bindir}/vp9enc
-%{_bindir}/vpp3dlut
 %{_bindir}/vppblending
 %{_bindir}/vppchromasitting
 %{_bindir}/vppdenoise
@@ -69,6 +63,10 @@ autoreconf -vif
 %{_bindir}/vppsharpness
 
 %changelog
+* Wed Mar 02 2022 Simone Caronni <negativo17@gmail.com> - 1:2.14.0-1
+- Update to 2.14.0.
+- Switch to meson.
+
 * Mon Oct 25 2021 Simone Caronni <negativo17@gmail.com> - 1:2.13.0-1
 - Update to 2.13.0.
 
