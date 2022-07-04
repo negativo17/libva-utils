@@ -1,16 +1,17 @@
-Name:		libva-utils
+Name:       libva-utils
 Epoch:      1
-Version:	2.14.0
-Release:	1%{?dist}
-Summary:	Collection of tests for VA-API (VIdeo Acceleration API)
-License:	MIT and BSD
-URL:		https://01.org/linuxmedia/vaapi
+Version:    2.15.0
+Release:    1%{?dist}
+Summary:    Collection of tests for VA-API (VIdeo Acceleration API)
+License:    MIT and BSD
+URL:        https://01.org/linuxmedia/vaapi
 
-Source0:	https://github.com/intel/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:    https://github.com/intel/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  meson >= 0.42.0
 BuildRequires:  gcc-c++
+BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libva) >= 1.1.0
 BuildRequires:  pkgconfig(libva-drm)
 BuildRequires:  pkgconfig(libva-wayland)
@@ -63,6 +64,9 @@ properly operate.
 %{_bindir}/vppsharpness
 
 %changelog
+* Mon Jul 04 2022 Simone Caronni <negativo17@gmail.com> - 1:2.15.0-1
+- Update to 2.15.0.
+
 * Wed Mar 02 2022 Simone Caronni <negativo17@gmail.com> - 1:2.14.0-1
 - Update to 2.14.0.
 - Switch to meson.
