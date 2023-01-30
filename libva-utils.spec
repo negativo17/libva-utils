@@ -41,6 +41,7 @@ properly operate.
 %files
 %license COPYING
 %doc NEWS
+%{_bindir}/av1encode
 %{_bindir}/avcenc
 %{_bindir}/avcstreamoutdemo
 %{_bindir}/h264encode
@@ -52,13 +53,16 @@ properly operate.
 %{_bindir}/putsurface
 %{_bindir}/putsurface_wayland
 %{_bindir}/sfcsample
+%{_bindir}/vacopy
 %{_bindir}/vainfo
 %{_bindir}/vavpp
 %{_bindir}/vp8enc
 %{_bindir}/vp9enc
+%{_bindir}/vpp3dlut
 %{_bindir}/vppblending
 %{_bindir}/vppchromasitting
 %{_bindir}/vppdenoise
+%{_bindir}/vpphdr_tm
 %{_bindir}/vppscaling_csc
 %{_bindir}/vppscaling_n_out_usrptr
 %{_bindir}/vppsharpness
